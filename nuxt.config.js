@@ -39,7 +39,7 @@ export default {
     "@nuxtjs/axios",
   ],
 
-  router: { base: "/semovies-id/" },
+  router: { base: "/buylink/" },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
