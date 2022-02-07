@@ -148,7 +148,7 @@
                         </p>
                       </div>
                       <div class="flex flex-row items-center">
-                        <img class="w-7" src="/icons/eye.svg" alt="eye" />
+                        <img class="w-7" src="/icons/eye.png" alt="eye" />
                         <span class="ml-1 text-yellow">126</span>
                       </div>
                     </div>
@@ -183,7 +183,7 @@
                         </p>
                       </div>
                       <div class="flex flex-row items-center">
-                        <img class="w-7" src="/icons/eye.svg" alt="eye" />
+                        <img class="w-7" src="/icons/eye.png" alt="eye" />
                         <span class="ml-1 text-yellow">482</span>
                       </div>
                     </div>
@@ -218,7 +218,7 @@
                         </p>
                       </div>
                       <div class="flex flex-row items-center">
-                        <img class="w-7" src="/icons/eye.svg" alt="eye" />
+                        <img class="w-7" src="/icons/eye.png" alt="eye" />
                         <span class="ml-1 text-yellow">482</span>
                       </div>
                     </div>
