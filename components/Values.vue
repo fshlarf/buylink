@@ -5,10 +5,11 @@
         <div
           class="mb-3 text-4xl font-bold leading-relaxed text-blackText-2 lg:text-6xl"
         >
-          Why choose us
+          Mengapa Buylink?
         </div>
         <div class="text-lg font-medium text-gray-7">
-          House is comitted to helping its clients to reach their goals
+          Buylink berkomitmen untuk membantu banyak orang dalam bertransaksi
+          dengan kemudahan sebagai berikut.
         </div>
       </div>
       <div
@@ -38,10 +39,11 @@
               />
             </div>
             <div class="mt-6 mb-1 text-base font-bold text-blue-primary">
-              Tax Advantage
+              Mudah & Praktis
             </div>
             <div class="text-base font-normal leading-7 text-gray-7">
-              Tax advantage which applies to certain accounts or investments.
+              Proses generate link transaksi sangat mudah dan praktis. Tanpa
+              verifikasi yang ribet, tanpa buka toko dan tanpa registrasi.
             </div>
           </div>
         </div>
@@ -67,11 +69,11 @@
               />
             </div>
             <div class="mt-6 mb-1 text-base font-bold text-blue-primary">
-              Property Insurance
+              Dijamin Aman
             </div>
             <div class="text-base font-normal leading-7 text-gray-7">
-              A series of policies that offer either property protection of
-              liability coverage.
+              Dengan menggunakan Buylink sebagai rekening bersama, segala proses
+              transaksi diawasi dan dijamin aman!
             </div>
           </div>
         </div>
@@ -97,11 +99,11 @@
               />
             </div>
             <div class="mt-6 mb-1 text-base font-bold text-blue-primary">
-              Lowest Commission
+              Mudah dipublish
             </div>
             <div class="text-base font-normal leading-7 text-gray-7">
-              No longer have to negotiate commissions and haggle with other
-              agents.
+              Link transaksi yang sudah digenerate dapat dengan mudah kamu
+              salin, simpan dan bagikan di media sosial atau komunitas.
             </div>
           </div>
         </div>
@@ -129,10 +131,11 @@
               />
             </div>
             <div class="mt-6 mb-1 text-base font-bold text-blue-primary">
-              House Now
+              Terjadwal
             </div>
             <div class="text-base font-normal leading-7 text-gray-7">
-              Easy booking system for a host. Try our innovative model.
+              Kamu dapat menambahkan waktu expired dari produk yang ingin kamu
+              jual.
             </div>
           </div>
         </div>

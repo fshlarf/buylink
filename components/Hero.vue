@@ -99,9 +99,9 @@
                 <p class="mt-1 text-base font-normal leading-7 text-gray-6">
                   Buylink memudahkan kamu men-generate link untuk bertransaksi
                   secara online. Tanpa verifikasi yang ribet, tanpa toko dan
-                  tanpa login. Hitungan menit link transaksi selesai. Dengan
-                  mudah akun game, media sosial atau item digital kamu dapat
-                  terjual.
+                  tanpa registrasi. Hitungan menit link transaksi selesai. Akun
+                  game, media sosial atau item digital kamu dapat terjual dengan
+                  mudah, cepat dan aman.
                 </p>
               </div>
               <div class="py-3 mt-9">
@@ -179,7 +179,7 @@
                     <div class="flex flex-row items-center justify-between">
                       <div class="mr-auto">
                         <p class="text-blackText-1">
-                          Start from <span class="font-bold">Rp5.000.000</span>
+                          <span class="font-bold">Rp5.000.000</span>
                         </p>
                       </div>
                       <div class="flex flex-row items-center">
@@ -214,7 +214,7 @@
                     <div class="flex flex-row items-center justify-between">
                       <div class="mr-auto">
                         <p class="text-blackText-1">
-                          Start from <span class="font-bold">Rp5.000.000</span>
+                          <span class="font-bold">Rp5.000.000</span>
                         </p>
                       </div>
                       <div class="flex flex-row items-center">

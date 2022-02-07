@@ -10,11 +10,12 @@
               alt="workly"
             />
             <div class="mt-3 mb-2 text-base font-semibold text-white-3">
-              Work.ly
+              Buylink.
             </div>
             <p class="text-base font-normal text-white-3">
-              Jl. Nyi Ageng Serang no 51B <br />
-              Sleman Yogyakarta
+              Ruko Permata Regency Blok D No. 37, Jl. Haji Kelik, Kel.
+              Srengseng, Kec. Kembangan, Kota Adm. Jakarta Barat, Prov. DKI
+              Jakarta
             </p>
             <!-- social media icons SVG -->
             <div class="flex flex-row items-center mt-9">
@@ -154,53 +155,48 @@
           </div>
           <div class="md:col-span-4 lg:col-span-2">
             <div class="mb-5 text-base font-bold text-white-3">
-              Our Features
+              Fitur & Produk
             </div>
             <div class="mb-3">
               <a href="" class="text-base font-normal text-white-3">
-                Adaptive
+                Rekening Bersama
               </a>
             </div>
             <div class="mb-3">
-              <a href="" class="text-base font-normal text-white-3"> Faster </a>
-            </div>
-            <div class="mb-3">
               <a href="" class="text-base font-normal text-white-3">
-                Integrated
-              </a>
-            </div>
-          </div>
-          <div class="md:col-span-4 lg:col-span-2">
-            <div class="mb-5 text-base font-bold text-white-3">Company</div>
-            <div class="mb-3">
-              <a href="" class="text-base font-normal text-white-3">
-                About Us
+                Link Transaksi
               </a>
             </div>
             <div class="mb-3">
-              <a href="" class="text-base font-normal text-white-3"> Blog </a>
-            </div>
-            <div class="mb-3">
               <a href="" class="text-base font-normal text-white-3">
-                Join Us
+                Jual Beli Akun & Item Digital
               </a>
             </div>
           </div>
           <div class="md:col-span-4 lg:col-span-2">
-            <div class="mb-5 text-base font-bold text-white-3">Help</div>
+            <div class="mb-5 text-base font-bold text-white-3">Perusahaan</div>
             <div class="mb-3">
               <a href="" class="text-base font-normal text-white-3">
-                API Documentation
+                Tentang Kami
+              </a>
+            </div>
+            <div class="mb-3">
+              <a href="" class="text-base font-normal text-white-3"> Tim </a>
+            </div>
+            <div class="mb-3">
+              <a href="" class="text-base font-normal text-white-3"> Karir </a>
+            </div>
+          </div>
+          <div class="md:col-span-4 lg:col-span-2">
+            <div class="mb-5 text-base font-bold text-white-3">Bantuan</div>
+            <div class="mb-3">
+              <a href="" class="text-base font-normal text-white-3">
+                hello@buylink.id
               </a>
             </div>
             <div class="mb-3">
               <a href="" class="text-base font-normal text-white-3">
-                System Status
-              </a>
-            </div>
-            <div class="mb-3">
-              <a href="" class="text-base font-normal text-white-3">
-                Talk to Support
+                +6282277068394
               </a>
             </div>
           </div>
@@ -208,7 +204,7 @@
       </footer>
       <div class="mx-auto mt-16 max-w-screen-2xl py-9">
         <p class="text-base font-normal text-center text-white-3">
-          2021 Work.ly | All rights reserved
+          2022 Buylink.id - Powered by Seakun
         </p>
       </div>
     </main>

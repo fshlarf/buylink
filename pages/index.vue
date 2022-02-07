@@ -7,7 +7,7 @@
       </header>
     </section>
     <Values />
-    <Benefits />
+    <!-- <Benefits /> -->
     <Footer />
   </div>
 </template>
