@@ -50,7 +50,9 @@
       </svg>
     </div>
     <div class="max-w-screen-2xl mx-auto px-4 lg:px-24">
-      <div class="flex items-center justify-between hero py-16 lg:py-32">
+      <div
+        class="flex items-center justify-between hero py-16 lg:pt-32 lg:pb-12"
+      >
         <!-- GRID -->
         <div class="grid items-center grid-cols-2 gap-16 mb-7">
           <!-- LEFT PART -->
@@ -97,11 +99,11 @@
               </div>
               <div>
                 <p class="mt-1 text-base font-normal leading-7 text-gray-6">
-                  Buylink memudahkan kamu men-generate link untuk bertransaksi
-                  secara online. Tanpa verifikasi yang ribet, tanpa toko dan
-                  tanpa registrasi. Hitungan menit link transaksi selesai. Akun
-                  game, media sosial atau item digital kamu dapat terjual dengan
-                  mudah, cepat dan aman.
+                  Buylink memudahkan untuk bertransaksi secara online. Tanpa
+                  verifikasi yang ribet, tanpa toko dan tanpa registrasi.
+                  Hitungan menit link transaksi selesai. Akun game, media sosial
+                  atau item digital kamu dapat terjual dengan mudah, cepat dan
+                  aman.
                 </p>
               </div>
               <div class="py-3 mt-9">

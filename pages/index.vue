@@ -2,11 +2,13 @@
   <div>
     <section class="header-section">
       <header class="py-7 my-0.5">
-        <Navbar />
-        <Hero />
+        <navbar />
+        <hero />
       </header>
     </section>
-    <Values />
+    <brands />
+    <values />
+    <transactions />
     <!-- <Benefits /> -->
     <Footer />
   </div>

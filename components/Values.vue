@@ -3,13 +3,13 @@
     <div class="max-w-screen-2xl px-4 lg:px-24 mx-auto content">
       <div class="text-center section-heading mb-16">
         <div
-          class="mb-3 text-4xl font-bold leading-relaxed text-blackText-2 lg:text-6xl"
+          class="mb-3 text-4xl font-bold leading-relaxed text-blackText-2 lg:text-5xl"
         >
           Mengapa Buylink?
         </div>
         <div class="text-lg font-medium text-gray-7">
-          Buylink berkomitmen untuk membantu banyak orang dalam bertransaksi
-          dengan kemudahan sebagai berikut.
+          Buylink berkomitmen untuk membantu banyak penggunanya dalam
+          bertransaksi dengan kemudahan sebagai berikut.
         </div>
       </div>
       <div
