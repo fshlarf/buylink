@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="header-section">
+    <!-- <section class="header-section">
       <header class="py-7 my-0.5">
         <navbar />
         <hero />
@@ -9,8 +9,8 @@
     <brands />
     <values />
     <transactions />
-    <!-- <Benefits /> -->
-    <Footer />
+    <Benefits />
+    <Footer /> -->
   </div>
 </template>
 
@@ -18,6 +18,7 @@
 import { defineComponent, reactive, ref } from "@nuxtjs/composition-api";
 
 export default defineComponent({
+  components: {},
   setup() {
     const state = reactive({
       name: "Faishal Arif",
