@@ -13,6 +13,7 @@ module.exports = {
     extend: {
       colors: {
         background: "#E5E5E5",
+        "bg-second": "#FDFDFD",
         primary: "#0194F3",
         "primary-dark": "#1A699D",
         black: "#2D2D2D",
@@ -22,8 +23,14 @@ module.exports = {
         "soft-purple": "#A2B6D4",
         error: "#BA0000",
         alert: "#66738F",
+        open: "#4ECB71",
+        locked: "#FFD644",
+        paid: "#E87C5A",
+        complete: "#0194F3",
+        closed: "#FF4E4E",
       },
       fontSize: {
+        8: "8px",
         12: "12px",
         14: "14px",
         16: "16px",
@@ -32,6 +39,7 @@ module.exports = {
         24: "24px",
         26: "26px",
         32: "32px",
+        36: "36px",
         44: "44px",
         52: "52px",
       },
