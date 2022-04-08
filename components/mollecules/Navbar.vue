@@ -30,7 +30,9 @@
     </div>
     <div class="lg:hidden relative z-40">
       <div class="bg-white w-full">
-        <div class="flex justify-between items-center py-2 px-8 bg-white">
+        <div
+          class="flex justify-between items-center py-2 px-3 md:px-6 bg-white"
+        >
           <img
             class="w-[48px]"
             src="/images/icons/logo.png"

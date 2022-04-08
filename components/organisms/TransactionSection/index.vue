@@ -6,7 +6,7 @@
       <span class="text-primary-dark">List</span> transaction
     </h1>
     <div
-      class="flex justify-center space-x-16 items-center mt-8 pb-4 overflow-hidden"
+      class="px-4 md:px-0 overflow-x-auto overscroll-auto flex md:justify-center space-x-16 items-center mt-8 pb-4 overflow-hidden hide-scroll-bar"
     >
       <div
         v-for="(category, id) in categories"

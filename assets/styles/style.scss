@@ -22,7 +22,6 @@ html {
     opacity: 0.7;
   }
 }
-
 .shadow-card {
   box-shadow: 1px 1px 15px 5px #a2b6d426;
 }
@@ -35,4 +34,11 @@ button[disabled] {
 button:hover:enabled,
 button:active:enabled {
   opacity: 0.7;
+}
+.hide-scroll-bar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scroll-bar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
