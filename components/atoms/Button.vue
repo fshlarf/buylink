@@ -2,7 +2,7 @@
   <button
     @click="$emit('click')"
     :disabled="disabled"
-    :class="`px-10 py-3 font-semibold ${type} ${textSize} ${radius} ${addClass}`"
+    :class="`px-10 py-4 font-semibold ${type} ${textSize} ${radius} ${addClass}`"
   >
     <div v-if="isLoading" class="flex justify-center items-center">
       <svg
@@ -51,7 +51,7 @@ export default defineComponent({
     },
     textSize: {
       type: String,
-      default: "text-18",
+      default: "text-14 md:text-18",
     },
     radius: {
       type: String,

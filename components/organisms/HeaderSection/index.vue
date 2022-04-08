@@ -1,12 +1,12 @@
 <template>
   <div class="bg-bg-second">
-    <div class="md:py-6 lg:py-14 xl:py-20 bg-curved">
+    <div class="pt-4 md:py-6 lg:py-14 xl:py-20 bg-curved">
       <div
-        class="container mx-auto grid-cols-1 md:grid-cols-2 grid items-center relative z-10 pt-20 pb-14 md:py-20"
+        class="container mx-auto grid-cols-1 md:grid-cols-2 gap-6 grid items-center relative z-10 pt-20 pb-14 md:py-20"
       >
         <div class="order-2 md:order-1 text-center md:text-left">
           <h1
-            class="text-32 lg:text-44 xl:text-52 font-extrabold leading-tight text-primary mt-6 md:mt-0"
+            class="text-32 lg:text-44 xl:text-52 font-extrabold leading-tight text-primary"
           >
             <span class="text-primary-dark">Rekening Bersama</span> Jual Beli
             Akun dan Item Digital
