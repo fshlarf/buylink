@@ -46,7 +46,7 @@ export default {
     "@nuxtjs/axios",
   ],
 
-  router: { base: "/buylink/" },
+  router: { base: "/" },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
