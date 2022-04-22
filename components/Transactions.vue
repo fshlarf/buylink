@@ -22,9 +22,9 @@
 
 <script>
 import { defineComponent } from "@nuxtjs/composition-api";
-import CardTransaction from "./mollecules/CardTransaction.vue";
+// import CardTransaction from "./mollecules/CardTransaction.vue";
 
 export default defineComponent({
-  components: { CardTransaction },
+  // components: { CardTransaction },
 });
 </script>
