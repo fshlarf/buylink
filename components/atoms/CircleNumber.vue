@@ -7,7 +7,7 @@
       {{ data.number }}
     </div>
     <p
-      class="text-12 md:text-16 mt-2"
+      class="text-12 md:text-16 mt-2 text-center"
       :class="`${data.isActive ? 'text-primary' : 'text-soft-purple'}`"
     >
       {{ data.name }}

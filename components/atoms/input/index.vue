@@ -5,7 +5,7 @@
     </label>
     <div class="form-content relative z-0">
       <input
-        class="relative z-0 appearance-none border border-soft-purple rounded-lg w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:border-primary"
+        class="relative z-0 appearance-none border border-soft-purple rounded-lg w-full text-14 md:text-16 py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:border-primary"
         :class="`${error.isError ? 'border-error' : ''} ${inputClass}`"
         :type="type"
         :name="name"
