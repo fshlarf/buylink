@@ -6,9 +6,7 @@
       </p>
       <div class="p-4 bg-gray-modal rounded-md mt-2">
         <p class="text-12 md:text-14 font-bold">Data Diri</p>
-        <div
-          class="text-12 md:text-14 font-medium grid grid-cols-3 gap-2 mt-2 items-center"
-        >
+        <div class="text-12 md:text-14 font-medium grid grid-cols-3 gap-2 mt-2">
           <div class="space-y-2 text-gray">
             <p>Nama</p>
             <p>E-mail</p>
@@ -42,9 +40,7 @@
       </div>
       <div class="p-4 bg-gray-modal rounded-md mt-2">
         <p class="text-12 md:text-14 font-bold">Data Withdraw</p>
-        <div
-          class="text-12 md:text-14 font-medium grid grid-cols-3 gap-2 mt-2 items-center"
-        >
+        <div class="text-12 md:text-14 font-medium grid grid-cols-3 gap-2 mt-2">
           <div class="space-y-2 text-gray">
             <p>Nama Bank</p>
             <p>No. Rekening</p>
@@ -110,7 +106,11 @@ export default defineComponent({
   },
   setup(props, { emit }) {
     const imageUrl = computed(() => {
-      return URL.createObjectURL(props.dataTransaction.picture);
+      if (props.dataTransaction.picture) {
+        return URL.createObjectURL(props.dataTransaction.picture);
+      } else {
+        return "";
+      }
     });
 
     const onClose = () => {

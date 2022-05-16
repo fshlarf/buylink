@@ -20,8 +20,8 @@
       </div>
     </div>
 
-    <p v-if="error.isError" class="text-error text-xs pt-1 italic">
-      {{ error.message }}
+    <p v-if="error" class="text-error text-xs pt-1">
+      {{ error }}
     </p>
   </div>
 </template>
@@ -43,11 +43,8 @@ export default defineComponent({
       default: "",
     },
     error: {
-      type: Object,
-      default: () => ({
-        isError: false,
-        message: "",
-      }),
+      type: String,
+      default: "",
     },
     placeholder: {
       type: String,
