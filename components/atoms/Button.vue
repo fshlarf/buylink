@@ -2,7 +2,7 @@
   <button
     @click="$emit('click')"
     :disabled="disabled"
-    :class="`px-10 py-4 font-semibold ${type} ${textSize} ${radius} ${addClass}`"
+    :class="`${padding} ${weight} ${type} ${textSize} ${radius} ${addClass}`"
   >
     <div v-if="isLoading" class="flex justify-center items-center">
       <svg
@@ -48,6 +48,14 @@ export default defineComponent({
     type: {
       type: String,
       default: "btn-primary",
+    },
+    weight: {
+      type: String,
+      default: "font-semibold",
+    },
+    padding: {
+      type: String,
+      default: "px-10 py-4",
     },
     textSize: {
       type: String,

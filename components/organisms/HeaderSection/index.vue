@@ -14,7 +14,11 @@
           <p class="text-subtitle lg:text-20 my-4">
             <b>Buylink</b> memudahkan untuk bertransaksi secara online.
           </p>
-          <Button class="mt-3 mx-auto md:mx-0" label="Learn more" />
+          <Button
+            @click="toTransactionPage"
+            class="mt-3 mx-auto md:mx-0"
+            label="Mulai Transaksi"
+          />
         </div>
         <img
           class="w-full order-1 md:order-2"
@@ -28,10 +32,21 @@
 
 <script>
 import Button from "../../atoms/Button.vue";
-import { defineComponent } from "@nuxtjs/composition-api";
+import { defineComponent, useRouter } from "@nuxtjs/composition-api";
 export default defineComponent({
   components: {
     Button,
+  },
+  setup() {
+    const router = useRouter();
+
+    const toTransactionPage = () => {
+      router.push("/transaction");
+    };
+
+    return {
+      toTransactionPage,
+    };
   },
 });
 </script>

@@ -28,9 +28,11 @@ module.exports = {
         paid: "#E87C5A",
         complete: "#0194F3",
         closed: "#FF4E4E",
+        "gray-modal": "#F5F5F5",
       },
       fontSize: {
         8: "8px",
+        10: "10px",
         12: "12px",
         14: "14px",
         16: "16px",

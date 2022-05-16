@@ -22,6 +22,13 @@ html {
     opacity: 0.7;
   }
 }
+.btn-white {
+  background-color: white;
+  color: black;
+  &:focus {
+    opacity: 0.7;
+  }
+}
 .shadow-card {
   box-shadow: 1px 1px 15px 5px #a2b6d426;
 }
