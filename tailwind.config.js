@@ -22,6 +22,7 @@ module.exports = {
         neutral: "#616161",
         "soft-purple": "#A2B6D4",
         error: "#BA0000",
+        "alert-bg": "#FFF2F2",
         alert: "#66738F",
         open: "#4ECB71",
         locked: "#FFD644",
