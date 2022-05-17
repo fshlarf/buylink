@@ -4,12 +4,12 @@
       {{ label }}
     </label>
     <div class="form-content relative z-0">
-      <input
+      <textarea
         class="relative z-0 appearance-none border rounded-lg w-full text-14 md:text-16 py-4 px-3 text-gray-700 leading-tight focus:outline-none"
         :class="`${
           errorMessage ? 'border-error' : 'border-soft-purple'
         } ${inputClass}`"
-        :type="type"
+        :rows="rows"
         :name="name"
         v-bind="$attrs"
         v-on="$listeners"
@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <p v-if="errorMessage" class="text-error text-xs pt-1">
+    <p v-if="errorMessage" class="text-error text-xs">
       {{ errorMessage }}
     </p>
   </div>
@@ -57,9 +57,9 @@ export default defineComponent({
       type: String,
       default: "",
     },
-    type: {
+    rows: {
       type: String,
-      default: "text",
+      default: "",
     },
     className: {
       type: String,
