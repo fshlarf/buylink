@@ -18,7 +18,7 @@
     </div>
     <div class="rounded-lg md:shadow-xl md:p-12">
       <transition name="form">
-        <div v-if="activeFlow === 1">
+        <div v-show="activeFlow === 1">
           <div class="space-y-4 md:space-y-7">
             <h1 class="font-bold text-18 md:text-24">Data Diri</h1>
             <div class="lg:grid lg:grid-cols-5 lg:gap-16 items-center">
@@ -31,7 +31,9 @@
                 v-model="dataTransaction.name"
                 class="lg:col-span-4"
                 placeholder="Masukkan nama lengkap"
-                :error="errorData.name.error"
+                validation="required|name"
+                name="nama"
+                @validate="validate"
               />
             </div>
             <div class="lg:grid lg:grid-cols-5 lg:gap-16 items-center">
@@ -44,7 +46,9 @@
                 v-model="dataTransaction.email"
                 class="lg:col-span-4"
                 placeholder="Masukkan e-mail"
-                :error="errorData.email.error"
+                validation="required|email"
+                name="email"
+                @validate="validate"
               />
             </div>
             <div class="lg:grid lg:grid-cols-5 lg:gap-16 items-center">
@@ -57,13 +61,15 @@
                 v-model="dataTransaction.phone"
                 class="lg:col-span-4"
                 placeholder="cth: 8123456789"
-                :error="errorData.phone.error"
+                validation="required|phone"
+                name="nomor whatsapp"
+                @validate="validate"
               />
             </div>
           </div></div
       ></transition>
       <transition name="form">
-        <div v-if="activeFlow === 2">
+        <div v-show="activeFlow === 2">
           <div class="space-y-4 md:space-y-7">
             <h1 class="font-bold text-18 md:text-24">Data Produk</h1>
             <div class="lg:grid lg:grid-cols-5 lg:gap-16 items-center">
@@ -76,7 +82,9 @@
                 v-model="dataTransaction.title"
                 class="lg:col-span-4"
                 placeholder="Cth: Akun PUBG Premium, Akun Mobile Legend Premium"
-                :error="errorData.title.error"
+                validation="required"
+                name="judul produk"
+                @validate="validate"
               />
             </div>
             <div class="lg:grid lg:grid-cols-5 lg:gap-16 items-center">
@@ -85,20 +93,15 @@
               >
                 Deskripsi
               </p>
-              <div class="lg:col-span-4 w-full">
-                <textarea
-                  v-model="dataTransaction.description"
-                  rows="3"
-                  class="w-full border box border-soft-purple rounded-lg py-4 px-3 focus:outline-none text-14 md:text-16"
-                  placeholder="Masukkan deskripsi mengenai produk"
-                />
-                <p
-                  v-if="errorData.description.error"
-                  class="text-error text-xs"
-                >
-                  {{ errorData.description.error }}
-                </p>
-              </div>
+              <Textarea
+                v-model="dataTransaction.description"
+                class="lg:col-span-4"
+                rows="3"
+                placeholder="Masukkan deskripsi mengenai produk"
+                validation="required"
+                name="deskripsi produk"
+                @validate="validate"
+              />
             </div>
             <div class="lg:grid lg:grid-cols-5 lg:gap-16 items-center">
               <p
@@ -110,7 +113,9 @@
                 v-model="dataTransaction.price"
                 class="lg:col-span-4"
                 placeholder="Cth: 500000"
-                :error="errorData.price.error"
+                validation="required|nominal"
+                name="harga produk"
+                @validate="validate"
               />
             </div>
             <div class="lg:grid lg:grid-cols-5 lg:gap-16 items-center">
@@ -132,11 +137,8 @@
                   class="block w-full h-12 rounded-lg border border-dashed border-soft-purple text-16 text-soft-purple flex justify-center items-center opacity-50 cursor-pointer"
                   >Unggah foto</label
                 >
-                <p
-                  v-if="errorData.picture.error"
-                  class="text-error text-xs pt-1"
-                >
-                  {{ errorData.picture.error }}
+                <p v-if="errorImage" class="text-error text-xs pt-1">
+                  {{ errorImage }}
                 </p>
                 <input
                   @change="onUploadImage"
@@ -157,7 +159,7 @@
         </div>
       </transition>
       <transition name="form">
-        <div v-if="activeFlow === 3">
+        <div v-show="activeFlow === 3">
           <div class="space-y-4 md:space-y-7">
             <h1 class="font-bold text-18 md:text-24">Data Withdraw</h1>
             <div class="lg:grid lg:grid-cols-5 lg:gap-16 items-center">
@@ -170,7 +172,9 @@
                 v-model="dataTransaction.bankName"
                 class="lg:col-span-4"
                 placeholder="Masukkan nama bank"
-                :error="errorData.bankName.error"
+                validation="required"
+                name="nama bank"
+                @validate="validate"
               />
             </div>
             <div class="lg:grid lg:grid-cols-5 lg:gap-16 items-center">
@@ -183,7 +187,9 @@
                 v-model="dataTransaction.bankAccount"
                 class="lg:col-span-4"
                 placeholder="Masukkan nomor rekening"
-                :error="errorData.bankAccount.error"
+                validation="required"
+                name="nomor rekening"
+                @validate="validate"
               />
             </div>
             <div class="lg:grid lg:grid-cols-5 lg:gap-16 items-center">
@@ -196,7 +202,9 @@
                 v-model="dataTransaction.bankHolder"
                 class="lg:col-span-4"
                 placeholder="Masukkan pemilik rekening"
-                :error="errorData.bankHolder.error"
+                validation="required|name"
+                name="nama pemilik rekening"
+                @validate="validate"
               />
             </div>
           </div>
@@ -242,6 +250,7 @@
 import AlertMessage from "../../components/atoms/AlertMessage.vue";
 import Button from "../../components/atoms/Button.vue";
 import Input from "../../components/atoms/input";
+import Textarea from "../../components/atoms/input/textarea.vue";
 import ModalConfirmation from "./views/modal-confirmation.vue";
 import CircleNumber from "../../components/atoms/CircleNumber.vue";
 import {
@@ -252,20 +261,14 @@ import {
 } from "@nuxtjs/composition-api";
 import { v1 as uuid } from "uuid";
 import axios from "axios";
-import {
-  checkEmptyField,
-  checkNameFormat,
-  checkNominalFormat,
-  checkPhoneFormat,
-  checkEmailFormat,
-  checkImageFormat,
-} from "../../helper/form-validation";
+import { checkImageFormat } from "../../helper/validation";
 
 export default defineComponent({
   components: {
     AlertMessage,
     Button,
     Input,
+    Textarea,
     CircleNumber,
     ModalConfirmation,
   },
@@ -311,6 +314,7 @@ export default defineComponent({
     };
 
     const isShowModalConfirmation = ref(false);
+
     const onCloseModalConfirmation = () => {
       isShowModalConfirmation.value = false;
     };
@@ -333,75 +337,22 @@ export default defineComponent({
       bankHolder: "",
     });
 
-    const errorData = ref({
-      name: {
-        value: "",
-        error: "",
-        slug: "nama",
-      },
-      email: {
-        value: "",
-        error: "",
-        slug: "email",
-      },
-      phone: {
-        value: "",
-        error: "",
-        slug: "nomor whatsapp",
-      },
-      title: {
-        value: "",
-        error: "",
-        slug: "judul produk",
-      },
-      description: {
-        value: "",
-        error: "",
-        slug: "deskripsi produk",
-      },
-      price: {
-        value: "",
-        error: "",
-        slug: "harga produk",
-      },
-      picture: {
-        value: null,
-        error: "",
-        slug: "foto produk",
-      },
-      bankName: {
-        value: "",
-        error: "",
-        slug: "nama bank",
-      },
-      bankAccount: {
-        value: null,
-        error: "",
-        slug: "nomor rekening",
-      },
-      bankHolder: {
-        value: "",
-        error: "",
-        slug: "nama pemilik rekening",
-      },
-    });
+    const isValid = ref(true);
 
-    const updateErrorObject = () => {
-      errorData.value.name.value = dataTransaction.value.name;
-      errorData.value.email.value = dataTransaction.value.email;
-      errorData.value.phone.value = dataTransaction.value.phone;
-      errorData.value.title.value = dataTransaction.value.title;
-      errorData.value.description.value = dataTransaction.value.description;
-      errorData.value.price.value = dataTransaction.value.price;
-      errorData.value.picture.value = dataTransaction.value.picture;
-      errorData.value.bankName.value = dataTransaction.value.bankName;
-      errorData.value.bankAccount.value = dataTransaction.value.bankAccount;
-      errorData.value.bankHolder.value = dataTransaction.value.bankHolder;
+    const validate = (error) => {
+      if (error) {
+        isValid.value = false;
+      } else {
+        isValid.value = true;
+      }
     };
+
+    const errorImage = ref("");
 
     const onUploadImage = (e) => {
       const files = e.target.files;
       dataTransaction.value.picture = files[0];
+      errorImage.value = checkImageFormat(dataTransaction.value.picture);
     };
 
     const imageUrl = computed(() => {
@@ -409,55 +360,25 @@ export default defineComponent({
     });
 
     const checkFormValidation = () => {
-      let isValid = true;
-      updateErrorObject();
-
-      for (const property in errorData.value) {
-        errorData.value[property].error = checkEmptyField(
-          errorData.value[property].value,
-          errorData.value[property].slug
-        );
-        if (!errorData.value[property].value) {
-          isValid = false;
+      if (!dataTransaction.value.picture) {
+        errorImage.value = "Foto produk harus di upload";
+        isValid.value = false;
+      } else if (dataTransaction.value.picture) {
+        errorImage.value = checkImageFormat(dataTransaction.value.picture);
+        if (errorImage.value) {
+          isValid.value = false;
+        } else {
+          isValid.value = true;
         }
       }
 
-      errorData.value.name.error = errorData.value.name.value
-        ? checkNameFormat(errorData.value.name.value)
-        : errorData.value.name.error;
-
-      errorData.value.bankHolder.error = errorData.value.bankHolder.value
-        ? checkNameFormat(errorData.value.bankHolder.value)
-        : errorData.value.bankHolder.error;
-
-      errorData.value.email.error = errorData.value.email.value
-        ? checkEmailFormat(errorData.value.email.value)
-        : errorData.value.email.error;
-
-      errorData.value.phone.error = errorData.value.phone.value
-        ? checkPhoneFormat(errorData.value.phone.value)
-        : errorData.value.phone.error;
-
-      errorData.value.price.error = errorData.value.price.value
-        ? checkNominalFormat(errorData.value.price.value)
-        : errorData.value.price.error;
-
-      errorData.value.picture.error = errorData.value.picture.value
-        ? checkImageFormat(errorData.value.picture.value)
-        : errorData.value.picture.error;
-
-      if (
-        errorData.value.name.error ||
-        errorData.value.bankHolder.error ||
-        errorData.value.email.error ||
-        errorData.value.phone.error ||
-        errorData.value.price.error ||
-        errorData.value.picture.error
-      ) {
-        isValid = false;
+      for (const property in dataTransaction.value) {
+        if (!dataTransaction.value[property] && property !== "id") {
+          isValid.value = false;
+        }
       }
 
-      if (isValid) {
+      if (isValid.value) {
         isShowModalConfirmation.value = true;
         isShowAlert.value = false;
       } else {
@@ -521,6 +442,9 @@ export default defineComponent({
       activeFlow,
       dataStep,
       isLoadingSubmit,
+      isValid,
+      validate,
+      errorImage,
       imageUrl,
       isShowAlert,
       dataTransaction,
@@ -532,7 +456,6 @@ export default defineComponent({
       onUploadImage,
       onSubmitData,
       getData,
-      errorData,
       checkFormValidation,
       onCloseAlert,
     };
