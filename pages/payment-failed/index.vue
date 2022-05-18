@@ -1,15 +1,22 @@
 <template>
   <div class="container py-24 md:py-32">
-    <div class="flex flex-col justify-center items-center text-[16px] sm:px-24">
-      <img src="/images/confirmation/illustration.png" alt="" />
-      <p class="my-8 text-center lg:text-20 font-semibold">
-        yeay akun sudah pindah tangan dan proses transaksi sudah selesai
+    <div
+      class="flex flex-col text-center justify-center items-center text-[16px]"
+    >
+      <img src="/images/status_payment/failed_payment.png" alt="" />
+      <h2 class="md:text-32 text-20 font-bold my-4">
+        Pembayaran Gagal diproses
+      </h2>
+      <p
+        class="md:w-[60%] lg:w-[35%] text-center text-14 md:text-16 font-normal"
+      >
+        Mohon maaf proses pembayaran kamu gagal nih. Kita coba lagi yuk.
       </p>
       <nuxt-link to="/">
         <Button
-          label="kembali ke Homepage"
+          label="Coba Bayar Lagi"
           type="btn-primary"
-          addClass="rounded-md"
+          addClass="rounded-md mt-4"
         />
       </nuxt-link>
     </div>
