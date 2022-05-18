@@ -1,5 +1,5 @@
 <template>
-  <div class="container py-24 md:py-32">
+  <div class="container py-24 md:py-18">
     <div
       class="flex flex-col text-center justify-center items-center text-[16px]"
     >

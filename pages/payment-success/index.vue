@@ -1,5 +1,5 @@
 <template>
-  <div class="container py-24 md:py-32">
+  <div class="container py-24 md:py-18">
     <div class="flex flex-col justify-center items-center">
       <img src="/images/status_payment/success_payment.png" alt="" />
       <h2 class="lg:text-32 text-20 font-bold my-4">Pembayaran Berhasil</h2>
