@@ -18,7 +18,7 @@ module.exports = {
         "primary-dark": "#1A699D",
         black: "#2D2D2D",
         subtitle: "#696984",
-        gray: "rgba(45, 45, 45, 0.8)",
+        grey: "rgba(45, 45, 45, 0.8)",
         neutral: "#616161",
         "soft-purple": "#A2B6D4",
         error: "#BA0000",

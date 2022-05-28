@@ -39,7 +39,7 @@
       </div>
     </div>
     <div
-      class="z-40 overflow-auto backdrop backdrop-blur-2xl left-0 top-0 bottom-0 right-0 w-full h-full fixed bg-black opacity-50"
+      class="z-40 absolute backdrop left-0 top-0 w-full h-full"
       @click="onClose"
     ></div>
   </div>
@@ -91,5 +91,18 @@ export default defineComponent({
 .scroll-bar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+.backdrop {
+  backdrop-filter: blur(10px);
+}
+.backdrop::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  background-color: black;
+  opacity: 45%;
 }
 </style>

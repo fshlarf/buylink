@@ -41,7 +41,7 @@ export default defineComponent({
     const router = useRouter();
 
     const toTransactionPage = () => {
-      router.push("/transaction");
+      router.push("/create-transaction");
     };
 
     return {

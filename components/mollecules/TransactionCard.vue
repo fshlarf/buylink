@@ -2,9 +2,9 @@
   <div class="rounded-lg shadow-card bg-white p-2 md:p-4 relative z-0">
     <div class="rounded-lg bg-black h-40"></div>
     <div class="mt-3 space-y-1 md:space-y-2">
-      <p class="font-bold text-12 md:text-14">{{ dataTransaction.name }}</p>
-      <p class="text-12 text-gray">
-        {{ dataTransaction.desc }}
+      <p class="font-bold text-12 md:text-14">{{ dataTransaction.title }}</p>
+      <p class="text-12 text-grey">
+        {{ dataTransaction.description }}
       </p>
       <p class="text-14 md:text-16 text-primary-dark font-semibold">
         {{ toRupiah(dataTransaction.price) }}
@@ -34,23 +34,23 @@ export default defineComponent({
 
     const labelBackground = (transactionStatus) => {
       switch (transactionStatus) {
-        case 1:
+        case "available":
           status.value = "Open";
           return "bg-open";
           break;
-        case 2:
+        case "locked":
           status.value = "Locked";
           return "bg-locked";
           break;
-        case 3:
+        case "paid":
           status.value = "Paid";
           return "bg-paid";
           break;
-        case 4:
+        case "complete":
           status.value = "Complete";
           return "bg-complete";
           break;
-        case 5:
+        case "closed":
           status.value = "Closed";
           return "bg-closed";
           break;

@@ -13,12 +13,13 @@
         :key="id"
         class="tab cursor-pointer text-soft-purple"
         :class="{ 'active-tab': id === activeTab }"
-        @click="getTransactionByCategories(id)"
+        @click="getTransactionByCategories(category.value, id)"
       >
         {{ category.name }}
       </div>
     </div>
     <div
+      v-if="!isLoadingTransaction"
       class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 xl:gap-8 items-center mt-8 lg:mt-14 relative z-0"
     >
       <TransactionCard
@@ -38,6 +39,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import Button from "../../atoms/Button.vue";
 import TransactionCard from "../../mollecules/TransactionCard.vue";
 import { defineComponent, onMounted, ref } from "@nuxtjs/composition-api";
@@ -52,111 +54,142 @@ export default defineComponent({
       {
         id: 0,
         name: "All",
+        value: "all",
       },
       {
         id: 1,
         name: "Open",
+        value: "available",
       },
       {
         id: 2,
         name: "Locked",
+        value: "locked",
       },
       {
         id: 3,
         name: "Paid",
+        value: "paid",
       },
       {
         id: 4,
         name: "Complete",
+        value: "complete",
       },
       {
         id: 5,
         name: "Closed",
+        value: "closed",
       },
     ]);
     const filteredCategories = ref([]);
 
-    const getTransactionByCategories = (id) => {
+    const getTransactionByCategories = (category, id) => {
       activeTab.value = id;
-      if (id === 0) {
+      if (category === "all") {
         filteredCategories.value = transactionList.value;
       } else {
         filteredCategories.value = transactionList.value.filter((el) => {
-          return el.status === id;
+          return el.status === category;
         });
       }
     };
 
     onMounted(() => {
-      getTransactionByCategories(0);
+      getTransactions();
     });
 
-    const transactionList = ref([
-      {
-        id: 1,
-        img: "",
-        name: "Paket Akun PUBG",
-        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        price: 15000,
-        status: 1,
-      },
-      {
-        id: 2,
-        img: "",
-        name: "Paket Akun PUBG",
-        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        price: 15000,
-        status: 3,
-      },
-      {
-        id: 3,
-        img: "",
-        name: "Paket Akun PUBG",
-        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        price: 15000,
-        status: 4,
-      },
-      {
-        id: 4,
-        img: "",
-        name: "Paket Akun PUBG",
-        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        price: 15000,
-        status: 2,
-      },
-      {
-        id: 5,
-        img: "",
-        name: "Paket Akun PUBG",
-        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        price: 15000,
-        status: 3,
-      },
-      {
-        id: 6,
-        img: "",
-        name: "Paket Akun PUBG",
-        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        price: 15000,
-        status: 5,
-      },
-      {
-        id: 7,
-        img: "",
-        name: "Paket Akun PUBG",
-        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        price: 15000,
-        status: 1,
-      },
-      {
-        id: 8,
-        img: "",
-        name: "Paket Akun PUBG",
-        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        price: 15000,
-        status: 3,
-      },
-    ]);
+    const paramGetTransactionList = ref({
+      take: 12,
+      from: "",
+    });
+
+    const isLoadingTransaction = ref(true);
+
+    const transactionList = ref([]);
+    // const transactionList = ref([
+    //   {
+    //     id: 1,
+    //     img: "",
+    //     name: "Paket Akun PUBG",
+    //     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    //     price: 15000,
+    //     status: 1,
+    //   },
+    //   {
+    //     id: 2,
+    //     img: "",
+    //     name: "Paket Akun PUBG",
+    //     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    //     price: 15000,
+    //     status: 3,
+    //   },
+    //   {
+    //     id: 3,
+    //     img: "",
+    //     name: "Paket Akun PUBG",
+    //     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    //     price: 15000,
+    //     status: 4,
+    //   },
+    //   {
+    //     id: 4,
+    //     img: "",
+    //     name: "Paket Akun PUBG",
+    //     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    //     price: 15000,
+    //     status: 2,
+    //   },
+    //   {
+    //     id: 5,
+    //     img: "",
+    //     name: "Paket Akun PUBG",
+    //     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    //     price: 15000,
+    //     status: 3,
+    //   },
+    //   {
+    //     id: 6,
+    //     img: "",
+    //     name: "Paket Akun PUBG",
+    //     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    //     price: 15000,
+    //     status: 5,
+    //   },
+    //   {
+    //     id: 7,
+    //     img: "",
+    //     name: "Paket Akun PUBG",
+    //     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    //     price: 15000,
+    //     status: 1,
+    //   },
+    //   {
+    //     id: 8,
+    //     img: "",
+    //     name: "Paket Akun PUBG",
+    //     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    //     price: 15000,
+    //     status: 3,
+    //   },
+    // ]);
+
+    const getTransactions = async () => {
+      isLoadingTransaction.value = true;
+      await axios
+        .get("http://127.0.0.1:8080/item-summaries", {
+          params: paramGetTransactionList.value,
+        })
+        .then((res) => {
+          transactionList.value = res.data;
+          getTransactionByCategories("all", 0);
+          isLoadingTransaction.value = false;
+        })
+        .catch((err) => {
+          console.log(err);
+          isLoadingTransaction.value = false;
+        });
+    };
 
     return {
       activeTab,
@@ -164,6 +197,7 @@ export default defineComponent({
       filteredCategories,
       getTransactionByCategories,
       transactionList,
+      isLoadingTransaction,
     };
   },
 });

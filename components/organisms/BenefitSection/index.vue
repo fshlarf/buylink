@@ -18,7 +18,7 @@
         :class="`${[0, 3].includes(id) ? 'bg-[#fdfdfd]' : 'bg-white'}`"
       >
         <h3 class="md:text-20 font-semibold">{{ benefit.name }}</h3>
-        <p class="text-gray mt-2 text-14 md:text-16">{{ benefit.desc }}</p>
+        <p class="text-grey mt-2 text-14 md:text-16">{{ benefit.desc }}</p>
       </div>
     </div>
   </div>
