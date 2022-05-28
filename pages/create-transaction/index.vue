@@ -1,5 +1,5 @@
 <template>
-  <div class="container py-24 md:py-32">
+  <div class="container py-12 md:py-20">
     <AlertMessage
       class="mb-3"
       v-if="isShowAlert"

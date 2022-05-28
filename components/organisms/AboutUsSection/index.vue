@@ -3,7 +3,7 @@
     <div class="container max-w-5xl mx-auto">
       <div class="md:px-8 lg:px-16 xl:px-0">
         <p
-          class="text-14 md:text-18 lg:text-20 xl:text-26 text-center font-medium text-gray"
+          class="text-14 md:text-18 lg:text-20 xl:text-26 text-center font-medium text-grey"
         >
           <span class="font-bold text-primary">Buylink</span> memudahkan untuk
           bertransaksi secara online. Tanpa verifikasi yang ribet, tanpa toko

@@ -3,7 +3,7 @@
     <div class="rounded-lg bg-black h-40"></div>
     <div class="mt-3 space-y-1 md:space-y-2">
       <p class="font-bold text-12 md:text-14">{{ dataTransaction.title }}</p>
-      <p class="text-12 text-gray">
+      <p class="text-12 text-grey">
         {{ dataTransaction.description }}
       </p>
       <p class="text-14 md:text-16 text-primary-dark font-semibold">

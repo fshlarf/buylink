@@ -7,7 +7,7 @@
       <div class="p-4 bg-gray-modal rounded-md mt-2">
         <p class="text-12 md:text-14 font-bold">Data Diri</p>
         <div class="text-12 md:text-14 font-medium grid grid-cols-3 gap-2 mt-2">
-          <div class="space-y-2 text-gray">
+          <div class="space-y-2 text-grey">
             <p>Nama</p>
             <p>E-mail</p>
             <p>Whatsapp</p>
@@ -41,7 +41,7 @@
       <div class="p-4 bg-gray-modal rounded-md mt-2">
         <p class="text-12 md:text-14 font-bold">Data Withdraw</p>
         <div class="text-12 md:text-14 font-medium grid grid-cols-3 gap-2 mt-2">
-          <div class="space-y-2 text-gray">
+          <div class="space-y-2 text-grey">
             <p>Nama Bank</p>
             <p>No. Rekening</p>
             <p>Nama Holder</p>

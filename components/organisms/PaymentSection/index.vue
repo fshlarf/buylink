@@ -6,7 +6,7 @@
         <h1 class="text-24 md:text-36 xl:text-44 font-bold leading-tight">
           Dukungan Pembayaran
         </h1>
-        <p class="text-14 md:text-18 lg:text-20 text-gray mt-3">
+        <p class="text-14 md:text-18 lg:text-20 text-grey mt-3">
           Connect with your favourite tools that you use daily and keep things
           on track.
         </p>

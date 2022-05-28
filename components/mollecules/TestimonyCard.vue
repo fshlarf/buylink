@@ -12,7 +12,7 @@
         class="text-center rounded-xl shadow-xl p-4 lg:p-6 xl:p-8 bubble"
       >
         <p class="text-18 font-semibold">{{ dataTestimony.title }}</p>
-        <p class="text-14 text-gray relative z-10 mt-3">
+        <p class="text-14 text-grey relative z-10 mt-3">
           {{ dataTestimony.testimony }}
         </p>
       </div>
@@ -29,7 +29,7 @@
         class="text-center rounded-xl shadow-xl p-4 lg:p-6 xl:p-8 bubble"
       >
         <p class="text-18 font-semibold">{{ dataTestimony.title }}</p>
-        <p class="text-14 text-gray relative z-10 mt-3">
+        <p class="text-14 text-grey relative z-10 mt-3">
           {{ dataTestimony.testimony }}
         </p>
       </div>

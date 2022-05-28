@@ -28,7 +28,7 @@
     </div>
     <transition name="fade" class="overflow-hidden">
       <div v-if="faq.isActive" class="p-4 md:p-6 rounded-b-lg bg-[#F8F8F8]">
-        <p class="text-14 md:text-18 text-gray">
+        <p class="text-14 md:text-18 text-grey">
           {{ faq.answer }}
         </p>
       </div>
