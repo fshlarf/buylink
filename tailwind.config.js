@@ -30,6 +30,7 @@ module.exports = {
         complete: "#0194F3",
         closed: "#FF4E4E",
         "gray-modal": "#F5F5F5",
+        "table-bg" : "#F8F8F8",
       },
       fontSize: {
         8: "8px",
